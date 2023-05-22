@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'pagination',
+    loadChildren: () => import('./pagination/pagination.module').then( m => m.PaginationPageModule)
+  },
 ];
 
 @NgModule({

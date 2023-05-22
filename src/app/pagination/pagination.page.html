@@ -1,0 +1,94 @@
+<div class="wrapper" *ngIf="!choiceMade">
+  <div class="title_wrapper">
+    <h1>საცდელი</h1>
+    <h2>სახელი და გვარი</h2>
+    <img src="assets/Vector.svg" class="settings_icon" alt="" />
+  </div>
+  <div class="button_wrapper">
+    <button class="start_btn">Start</button>
+    <button class="stop_btn">Stop</button>
+  </div>
+</div>
+<div
+  class="wrapper"
+  *ngIf="choiceMade"
+  [ngStyle]="{'border':choiceMade? '2px solid black' : null}"
+>
+  <div class="title_wrapper">
+    <h1>საცდელი</h1>
+    <h2>სახელი და გვარი</h2>
+    <img src="assets/settings.svg" class="settings_icon" alt="" />
+  </div>
+  <ul class="menu_wrapper">
+    <div
+      class="menu_div menu1"
+      [ngClass]="{'active':selectedItem==='item1'}"
+      (click)="selectedItem='item1'"
+    >
+      <li>დღე</li>
+    </div>
+    <div
+      class="menu_div menu2"
+      [ngClass]="{'active':selectedItem==='item2'}"
+      (click)="selectedItem='item2'"
+    >
+      <li>თვე</li>
+    </div>
+
+    <div
+      class="menu_div menu3"
+      [ngClass]="{'active':selectedItem==='item3'}"
+      (click)="selectedItem='item3'"
+    >
+      <li>წელი</li>
+    </div>
+  </ul>
+  <div class="card_wrapper start_card">
+    <h1 class="card_title">Start</h1>
+    <h3 class="location">მისამართი: თბილისი</h3>
+    <div class="location_wrapper">
+      <div class="date_wrapper">
+        <div class="date card_date">
+          <img class="date_logo" src="assets/calendar.svg" alt="" />
+          <p class="date_text">06/07/2021</p>
+        </div>
+        <div class="date_time card_date">
+          <img src="assets/clock.svg" alt="" />
+          <p class="date_text">15:00 PM</p>
+        </div>
+        <div class="confirmation card_date">
+          <img src="assets/green-dot.svg" alt="" />
+          <p class="confirmation_text">Confirmada</p>
+        </div>
+      </div>
+      <div class="location_card">
+        <img src="assets/map.svg" alt="" />
+        <p class="location_text">Clinica 01</p>
+      </div>
+    </div>
+  </div>
+  <div class="card_wrapper stop_card">
+    <h1 class="card_title">Stop</h1>
+    <h3 class="location">მისამართი: თბილისი</h3>
+    <div class="location_wrapper">
+      <div class="date_wrapper">
+        <div class="date card_date">
+          <img class="date_logo" src="assets/calendar.svg" alt="" />
+          <p class="date_text">06/07/2021</p>
+        </div>
+        <div class="date_time card_date">
+          <img src="assets/clock.svg" alt="" />
+          <p class="date_text">15:00 PM</p>
+        </div>
+        <div class="confirmation card_date">
+          <img src="assets/red-dot.svg" alt="" />
+          <p class="confirmation_text">Confirmada</p>
+        </div>
+      </div>
+      <div class="location_card">
+        <img src="assets/map.svg" alt="" />
+        <p class="location_text">Clinica 01</p>
+      </div>
+    </div>
+  </div>
+</div>
